@@ -1,0 +1,10 @@
+p[0] is top
+p[1] is bridge
+p[2] is low
+
+f = lambda p: ((p[0]+p[1])^2 + 450*p[0] + (p[1]+p[2])^2 + 450*p[2] + 900*(400 - p[0] - p[1] - p[2]))/4000
+m_0 = lambda p: p[0]
+m_1 = lambda p: p[1]
+m_2 = lambda p: p[2]
+t = lambda p: 400 - p[0] - p[1] - p[2]
+a = minimize_constrained(f,[m_0,m_1,m_2,t],[100,50,100])
